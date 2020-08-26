@@ -5,7 +5,7 @@ try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
   const userName = core.getInput('user-name-secret');
-  console.log(`Hello Hello ${nameToGreet}!`);
+  console.log(`Hello Hello1 ${nameToGreet}!`);
   console.log('testing')
   console.log("test"+core.getInput('user-name-secret'));
   console.log(${userName});
