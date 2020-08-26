@@ -5,6 +5,10 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  username_secret:  # id of input
+    description: 'username'
+    required: true
+    default: 'katankot'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
