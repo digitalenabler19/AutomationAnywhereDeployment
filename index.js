@@ -15,13 +15,14 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   //console.log(`The event payload: ${payload}`);
-  authenticate('http://ec2-3-6-118-186.ap-south-1.compute.amazonaws.com/','prasad','password1')
+  authenticate('http://ec2-3-6-118-186.ap-south-1.compute.amazonaws.com','prasad','password1')
 } catch (error) {
   core.setFailed(error.message);
 }
 
 
 function authenticate(CRurl, loginID,password){ 
+console.log(CRurl+'   '+ loginID+'   '+password);
 var userCred={ Username:loginID, Password:password};
    request(
     {headers: {
