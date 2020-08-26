@@ -36,14 +36,14 @@ var userCred={ Username:loginID, Password:password};
         if (!error && response.statusCode == 200) {
 
            
-            thisSession = req.session;
+            //thisSession = req.session;
             console.log("results");
             var parsedBody=JSON.parse(body);
             console.log(parsedBody);
-    	    	thisSession.token = parsedBody.token;
+    	    	//thisSession.token = parsedBody.token;
             //global.thisSessionToken=parsedBody.token;
-    		console.log('token'+thisSession.token)
-            return thisSession.token;
+    		//console.log('token'+thisSession.token)
+            return parsedBody.token;
         }
         else  if (body.code=="UM1110" && response.statusCode != 200 )
         	res.send({status:"Login Failed"});
