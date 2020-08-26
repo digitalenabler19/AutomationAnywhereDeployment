@@ -6,6 +6,8 @@ try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
   const userName = core.getInput('user-name-secret');
+  const password = core.getInput('user-password');
+  const URL= core.getInput('URL');
   console.log(`Hello Hello1 ${nameToGreet}!`);
   console.log('testing1');
   console.log(userName);
@@ -15,7 +17,8 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   //console.log(`The event payload: ${payload}`);
-  authenticate('http://ec2-3-6-118-186.ap-south-1.compute.amazonaws.com','prasad','password1')
+  //console.log(authenticate('http://ec2-3-6-118-186.ap-south-1.compute.amazonaws.com','prasad','password1'))
+  console.log(authenticate(URL,userName,password))
 } catch (error) {
   core.setFailed(error.message);
 }
@@ -32,17 +35,11 @@ var userCred={ Username:loginID, Password:password};
     body: JSON.stringify(userCred),
     method: 'POST'},
     function (error, response, body) {
-
         if (!error && response.statusCode == 200) {
-
-           
             //thisSession = req.session;
-            console.log("results");
+            //console.log("results");
             var parsedBody=JSON.parse(body);
-            console.log(parsedBody);
-    	    	//thisSession.token = parsedBody.token;
-            //global.thisSessionToken=parsedBody.token;
-    		//console.log('token'+thisSession.token)
+            //console.log(parsedBody);
             return parsedBody.token;
         }
         else  if (body.code=="UM1110" && response.statusCode != 200 )

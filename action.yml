@@ -9,6 +9,14 @@ inputs:
     description: 'user name secret'
     required: true
     default: 'katankot'
+  user-password:  # id of input
+    description: 'user password'
+    required: true
+    default: 'katpassword'
+  URL:  # id of input
+    description: 'URL'
+    required: true
+    default: 'CR URL'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
