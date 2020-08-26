@@ -5,8 +5,8 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
-  username_secret:  # id of input
-    description: 'username'
+  user-name-secret:  # id of input
+    description: 'user name secret'
     required: true
     default: 'katankot'
 outputs:
